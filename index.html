@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health and Hygiene Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="main-content">
+    <h1>Select Disease</h1>
+    <button onclick="openModal('cough')">Cough</button>
+    <button onclick="openModal('bodypain')">Body Pain</button>
+    <button onclick="openModal('headache')">Headache</button>
+  </div>
+
+  <div id="disease-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Select Your Age and Weight</h2>
+      
+      <select id="age">
+        <option value="child">Child</option>
+        <option value="teen">Teen</option>
+        <option value="adult">Adult</option>
+        <option value="senior">Senior</option>
+      </select>
+
+      <select id="age-range">
+        <option value="under40">Under 40</option>
+        <option value="40to70">40-70</option>
+        <option value="above70">Above 70</option>
+      </select>
+
+      <select id="sex" onchange="showFemaleOptions()">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <div id="female-options" style="display: none;">
+        <select id="female-condition">
+          <option value="regular">Regular</option>
+          <option value="pregnant">Pregnant</option>
+          <option value="on_periods">On Periods</option>
+        </select>
+      </div>
+
+      <div id="disease-options" style="display: none;">
+        <h3>Select the type of disease</h3>
+        <select id="disease-subtype">
+          <!-- Sub-options for diseases will be populated dynamically -->
+        </select>
+      </div>
+
+      <button onclick="showMedicineDetails()">Show Medicine</button>
+
+      <div id="medicine-details"></div> <!-- This will show the recommended medicine -->
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
